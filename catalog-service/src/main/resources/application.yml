@@ -1,0 +1,18 @@
+
+spring: 
+  application:
+     name: catalog-service    # Service registers under this name
+
+
+# HTTP Server
+server.port: 8755   # HTTP (Tomcat) port
+
+# Discovery Server Access
+#  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
+#  2. Define URL of registration server (defaultZone)
+eureka:
+  client: 
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 0  
